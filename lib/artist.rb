@@ -1,3 +1,4 @@
+
 class Artist
   attr_accessor :name
 
@@ -6,7 +7,7 @@ class Artist
   end
 
   def songs
-    Song.all.select {|s| s.artist == self}
+    Song.all.select { |s| s.artist == self }
   end
 
   def add_song(song)
@@ -18,8 +19,7 @@ class Artist
     add_song(song)
   end
 
-  def self.song_count
-    Song.all.count
-  end
-
+   def self.song_count
+     Song.all.count
+   end
 end
