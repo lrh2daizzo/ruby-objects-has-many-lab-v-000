@@ -7,7 +7,7 @@ class Artist
   end
 
   def songs
-    Song.all.select { |s| s.artist == self }
+    Song.all.select { |song| song.artist == self }
   end
 
   def add_song(song)
@@ -15,11 +15,11 @@ class Artist
   end
 
   def add_song_by_name(name)
-    song = Song.new(name)
-    add_song(song)
+    Song.new(name).tap { |song| add_song(song) }
   end
 
-   def self.song_count
-     Song.all.count
-   end
+  def self.song_count
+    Song.all.count
+  end
+  
 end
