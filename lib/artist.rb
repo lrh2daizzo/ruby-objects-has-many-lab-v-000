@@ -13,5 +13,9 @@ class Artist
   def add_song(song)
     song.artist = self
   end
+
+  def add_song_by_name(name)
+    Song.new(name).tap {|song| self.add_song(song)}
+  end
   
 end
