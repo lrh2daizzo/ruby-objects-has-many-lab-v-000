@@ -17,5 +17,9 @@ class Artist
   def add_song_by_name(name)
     Song.new(name).tap {|song| self.add_song(song)}
   end
+
+  def self.song_count
+    Song.all.count
+  end
   
 end
